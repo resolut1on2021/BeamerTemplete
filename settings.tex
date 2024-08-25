@@ -1,0 +1,89 @@
+\usetheme{Warsaw}
+% \usetheme{split}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[backend=biber,style=gb7714-2015, url=false, doi=true]{biblatex}
+\usepackage{animate}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\graphicspath{figures/}
+
+% headline & footline
+\setbeamertemplate{headline}{}
+
+% 注释显示序号
+\setbeamertemplate{caption}[numbered]
+
+% 删除导航栏
+\setbeamertemplate{navigation symbols}{}
+
+% 页面显示编号
+
+
+% 字族设置
+\setCJKfamilyfont { ustc-song } {Source Han Serif CN}
+\setCJKfamilyfont { ustc-hei  } {Source Han Sans SC}
+\setCJKfamilyfont { ustc-kai  } {KaiTi_GB2312}
+\setCJKfamilyfont { ustc-fangsong  } {FangSong_GB2312}
+\setCJKfamilyfont { ustc-gengshahei  } {Sarasa Mono SC Nerd}
+\NewDocumentCommand \ustcsong   { } { \CJKfamily { ustc-song  } }
+\NewDocumentCommand \ustchei    { } { \CJKfamily { ustc-hei   } }
+\NewDocumentCommand \ustckai   { } { \CJKfamily { ustc-kai   } }
+\NewDocumentCommand \ustcfangsong   { } { \CJKfamily { ustc-fangsong   } }
+\NewDocumentCommand \ustcgengshahei   { } { \CJKfamily { ustc-gengshahei   } }
+
+%% 字体设置
+\setCJKmainfont{Source Han Serif CN}
+\setCJKsansfont{Source Han Sans SC}
+% \setbeamerfont{author}{size=\}
+\setbeamerfont{date}{size=\tiny}
+\setbeamerfont{title}{series=\ustcsong\bfseries}
+\setbeamerfont{subtitle}{series=\mdseries,size=\footnotesize}
+\setbeamerfont{frametitle}{series=\sffamily\ustchei}
+\setbeamerfont{framesubtitle}{series=\sffamily\ustchei}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{block title}{series=\centering}
+\setbeamerfont{block body}{family=\rmfamily}
+\setbeamerfont{footnote}{size=\tiny,series=\ttfamily\slshape}
+
+
+% 参考文献设置
+\addbibresource{ref.bib}
+
+\usepackage{caption}
+% \captionsetup{font={tiny}}
+
+\setlength{\parindent}{2em}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[square]
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\renewcommand*{\bibfont}{\footnotesize}
+
+%% 代码设置
+\lstset{
+    language=Python, % 设置语言
+ basicstyle=\ttfamily, % 设置字体族
+ breaklines=true, % 自动换行
+ keywordstyle=\bfseries\color{NavyBlue}, % 设置关键字为粗体，颜色为 NavyBlue
+ morekeywords={}, % 设置更多的关键字，用逗号分隔
+ emph={self}, % 指定强调词，如果有多个，用逗号隔开
+    emphstyle=\bfseries\color{Rhodamine}, % 强调词样式设置
+    commentstyle=\itshape\color{black!50!white}, % 设置注释样式，斜体，浅灰色
+    stringstyle=\bfseries\color{PineGreen!90!black}, % 设置字符串样式
+    columns=flexible,
+    numbers=left, % 行号位置
+    numbersep=2em, % 行号具体位置
+    numberstyle=\footnotesize, % 缩小行号
+    frame=single, % 边框
+    framesep=1em % 设置代码与边框的距离
+}

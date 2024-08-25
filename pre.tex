@@ -1,0 +1,63 @@
+\documentclass[aspectratio=169, UTF8]{ctexbeamer}
+\input{settings.tex}
+\author{Lovelxh}
+\date{\today}
+\title{My Presentation Title}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{目录}{Table of Contents}
+    \centering
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section[Block]{块}
+
+\begin{frame}{插入块}{Insert Blocks}
+    \begin{block}{普通块}
+        standard blocks
+    \end{block}
+    \begin{alertblock}{警示块}
+        alert block
+    \end{alertblock}
+    \begin{exampleblock}{示例块}
+        exampleb lock
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{插入块}{Insert Blocks}
+    \begin{theorem}
+        Theorem
+    \end{theorem}
+    \begin{definition}
+        Definition
+    \end{definition}
+    \begin{proof}
+        Proof
+    \end{proof}
+\end{frame}
+\section[Code block]{代码}
+
+\begin{frame}[fragile]{插入代码}{Insert code bLocks}
+    Listing
+    \begin{lstlisting}
+        import torch
+        print(torch.cuda.is_available())
+        print(f'device name [0]:', torch.cuda.get_device_name(0))
+    \end{lstlisting}
+\end{frame}
+
+\section[Reference Citations]{文献引用}
+
+\begin{frame}{文献引用脚注}{Reference Foot Citations}
+    Xianguang et al.\footfullcite{WU2018281} conducted 2D wave tank tests in regular waves to evaluate the primary conversion efficiency of six kinds of BBDB models with different hull form. They showed that primary conversion efficiency of six kinds of models was 22\%~73\%. Lewis et al. \footfullcite{SHENG2019709} carried out 3D wave tank tests for a BBDB model with linear damper PTO simulator in regular waves and measured motions of BBDB and air pressure in air chamber etc. Forestier et al. \footfullcite{inproceedings} reported the results of wave tank tests and field tests for the power output of BBDB named “OEBuoy” by OceanEnergy Limited.
+\end{frame}
+
+\begin{frame}{文献引用}{Reference Citations}
+    \printbibliography[heading=bibintoc, title=ref]
+\end{frame}
+\end{document}
