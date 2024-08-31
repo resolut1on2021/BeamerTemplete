@@ -24,70 +24,34 @@
   {\hfill\insertsectionhead}
   {\hfill\color{fg!50!bg}\insertsectionhead}
 
-                                % Head
-\ifbeamer@compress
-
-\defbeamertemplate*{headline}{split theme}
-{%
-  \leavevmode%
-  {\usebeamerfont{section in head/foot}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
-    \insertsectionnavigationhorizontal{.5\paperwidth}{\hskip0pt plus1filll}{}%
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{subsection in head/foot}%
-    \usebeamerfont{subsection in head/foot}%
-    \insertsubsectionnavigationhorizontal{.5\paperwidth}{}{\hskip0pt plus1filll}%
-  \end{beamercolorbox}}%
-}
-
-\else
-
-\defbeamertemplate*{headline}{split theme}
-{%
-  \leavevmode%
-  {\usebeamerfont{section in head/foot}%
-  \@tempdimb=2.4375ex%
-  \ifnum\beamer@subsectionmax<\beamer@sectionmax%
-    \multiply\@tempdimb by\beamer@sectionmax%
-  \else%
-    \multiply\@tempdimb by\beamer@subsectionmax%
-  \fi%
-  \ifdim\@tempdimb>0pt%
-    \advance\@tempdimb by 1.825ex%
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=\@tempdimb]{section in head/foot}%
-      \vbox to\@tempdimb{\vfil\usebeamerfont{section in head/foot}\insertsectionnavigation{.5\paperwidth}\vfil}%
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=\@tempdimb]{subsection in head/foot}%
-      \vbox to\@tempdimb{\vfil\usebeamerfont{subsection in head/foot}\insertsubsectionnavigation{.5\paperwidth}\vfil}%
-    \end{beamercolorbox}%
-  \fi%
-  }%
-}
-
-\fi
-
-
-\defbeamertemplate*{footline}{split theme}
+\defbeamertemplate*{footline}{USTC theme}
 {%
   \leavevmode%
   \hbox{
     \usebeamerfont{section in head/foot}%
-  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.5ex,dp=1.125ex, left]{section in head/foot}%
-    \insertsectionnavigationhorizontal{.4\paperwidth}{\hskip0pt plus1filll}{}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.125ex, center]{section in head/foot}%
+    % \insertsectionnavigationhorizontal{.333333\paperwidth}{\hskip0pt plus1filll}{}%
+    \insertshortauthor
   \end{beamercolorbox}%
   % \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.5ex,dp=1.125ex]{subsection in head/foot}%
   %   \usebeamerfont{subsection in head/foot}%
   %   \insertsubsectionnavigationhorizontal{.3\paperwidth}{}{\hskip0pt plus1filll}%
   % \end{beamercolorbox}}%
-  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+    % \usebeamerfont{author in head/foot}\insertshortauthor
     \usebeamerfont{title in head/foot}\insertshorttitle\nobreak\hfill\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}
+  \end{beamercolorbox}%
+
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1.125ex, right]{title in head/foot}%
+    % \usebeamerfont{title in head/foot}\insertshorttitle\nobreak\hfill\usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}
+    % \usebeamerfont{author in head/foot}\insertshortauthor
+    \insertshortdate{}%
+    \hfill
     {\insertframenumber{}}/{\inserttotalframenumber\quad}
     \usebeamertemplate{page number in head/foot}
   \end{beamercolorbox}}%
-  \vskip0pt%
+  \vskip2pt%
 }
 
 \setbeamercolor{frametitle}{parent=subsection in head/foot}
@@ -105,63 +69,37 @@
 
 \pgfdeclarefading{beamer@topshadowmask}{\pgfuseshading{beamer@topshade}}
 
-\addtobeamertemplate{headline}
-{}
+% \addtobeamertemplate{headline}
+% {}
+% {%
+%   \vskip0pt
+%   \begin{pgfpicture}
+%     \pgfpathrectangle{\pgfpoint{0pt}{-4pt}}{\pgfpoint{\paperwidth}{4pt}}%
+%     \pgfsetfading{beamer@topshadowmask}{}%
+%     \pgfusepath{fill}%
+%   \end{pgfpicture}
+%   \vskip-2pt
+% }
+
+\defbeamertemplate*{headline}{USTC theme}{}
+
+\defbeamertemplate*{frametitle}{USTC theme}
 {%
-  \vskip0pt
-  \begin{pgfpicture}
-    \pgfpathrectangle{\pgfpoint{0pt}{-4pt}}{\pgfpoint{\paperwidth}{4pt}}%
-    \pgfsetfading{beamer@topshadowmask}{}%
-    \pgfusepath{fill}%
-  \end{pgfpicture}
-  \vskip-2pt
+  \leavevmode%
+  \hbox{%
+  % \usebeamerfont{frametitle in head/foot}%
+  \begin{beamercolorbox}[wd=.65\paperwidth,ht=10ex,dp=1.5ex]{section in head/foot}%
+    \usebeamerfont{frametitle}
+    \insertsubsectionhead
+    \newline \usebeamerfont{framesubtitle} \hspace*{1.5ex} 123
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=10ex,dp=1.5ex,right]{section in head/foot}%
+    % \usebeamerfont{headline}\usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+    \includegraphics{ustc_logo_side.pdf}\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
 }
 
-\defbeamertemplate*{frametitle}{shadow theme}
-{%
-  \nointerlineskip%
-  \vskip-2pt%
-  \hbox{\leavevmode
-    \advance\beamer@leftmargin by -12bp%
-    \advance\beamer@rightmargin by -12bp%
-    \beamer@tempdim=\textwidth%
-    \advance\beamer@tempdim by \beamer@leftmargin%
-    \advance\beamer@tempdim by \beamer@rightmargin%
-    \hskip-\Gm@lmargin\hbox{%
-      \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
-          \vbox{}\vskip-.75ex%
-          \leftskip0.3cm%
-          \rightskip0.3cm plus1fil\leavevmode
-          \usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\strut\insertframetitle\strut\par%
-          \ifx\insertframesubtitle\@empty\else%
-            {\usebeamerfont*{framesubtitle}{\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\strut\par}%
-          \fi%
-          \nointerlineskip
-          \vbox{}%
-          \end{minipage}}%
-      \beamer@tempdim=\ht\beamer@tempbox%
-      \advance\beamer@tempdim by 2pt%
-      \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\beamer@tempdim}
-        \begin{pgfscope}
-          \pgfsetfillcolor{beamer@safeblack}%
-          \pgfpathrectangle{\pgfpoint{0pt}{-4pt}}{\pgfpoint{\paperwidth}{8pt}}%
-          \pgfsetfading{beamer@topshadowmask}{}%
-          \pgfusepath{fill}%
-        \end{pgfscope}
-        \begin{pgfscope}
-          \usebeamercolor{frametitle right}%
-          \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\beamer@tempdim}}%
-          \pgfusepath{clip}%
-          \pgftext[left,base]{\pgfuseshading{beamer@frametitleshade}}%
-        \end{pgfscope}
-      \end{pgfpicture}
-      \hskip-\paperwidth%
-      \box\beamer@tempbox%
-    }%
-    \hskip-\Gm@rmargin%
-  }%
-  \vskip-2pt
-}
 
 \mode
 <all>

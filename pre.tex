@@ -1,8 +1,14 @@
 \documentclass[aspectratio=169, UTF8]{ctexbeamer}
 \input{settings.tex}
-\author{The Author}
+\author{汇报人 XXX\inst{1,2}
+\newline  导师 XXX\inst{2}
+}
+\institute{
+\inst{1}中国科学技术大学\quad XXXX系 
+\newline \inst{2}中国科学院高能物理研究所
+}
 \date{XXXX年X月XX日}
-\title{My Presentation Title}
+\title{汇报标题}
 
 \begin{document}
 
@@ -10,38 +16,49 @@
     \maketitle
 \end{frame}
 
-\begin{frame}{目录}{Table of Contents}
+\begin{frame}{目录}
     \centering
     \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section[Block]{块}
+\section{第一章 XXXX}
+\subsection{第一节 XXXX}
 
-\begin{frame}{插入块}{Insert Blocks}
-    \begin{block}{普通块}
-        standard blocks
-    \end{block}
-    \begin{alertblock}{警示块}
-        alert block
-    \end{alertblock}
-    \begin{exampleblock}{示例块}
-        exampleb lock
-    \end{exampleblock}
+\begin{frame}{页标题}
+    \begin{columns}
+        \column{.45\paperwidth}
+        \begin{block}{普通块}
+            standard blocks
+        \end{block}
+        \begin{alertblock}{警示块}
+            alert block
+        \end{alertblock}
+        \begin{exampleblock}{示例块}
+            exampleb lock
+        \end{exampleblock}
+        \column{.45\paperwidth}
+        \begin{theorem}
+            Theorem
+        \end{theorem}
+        \begin{definition}
+            Definition
+        \end{definition}
+        \begin{proof}
+            Proof
+        \end{proof}
+    \end{columns}
+    
 \end{frame}
 
-\begin{frame}{插入块}{Insert Blocks}
-    \begin{theorem}
-        Theorem
-    \end{theorem}
-    \begin{definition}
-        Definition
-    \end{definition}
-    \begin{proof}
-        Proof
-    \end{proof}
+\begin{frame}{页标题}
+    \begin{figure}
+        \includegraphics[height=0.6\textheight]{fig.png}
+        \caption{灯谜}
+    \end{figure}
 \end{frame}
-\section[Code block]{代码}
 
+\section{第二章 XXXX}
+\subsection{插入代码块}
 \begin{frame}[fragile]{插入代码}{Insert Code Blocks}
     使用Listing宏包\begin{verbatim}
         \usepackage{listings}
@@ -56,13 +73,14 @@
 \end{frame}
 
 \section[Reference Citations]{文献引用}
-
+\subsection{文献引用}
 \begin{frame}{文献引用脚注}{Reference Foot Citations}
     Xianguang et al.\footfullcite{WU2018281} conducted 2D wave tank tests in regular waves to evaluate the primary conversion efficiency of six kinds of BBDB models with different hull form. They showed that primary conversion efficiency of six kinds of models was 22\%~73\%. Lewis et al. \footfullcite{SHENG2019709} carried out 3D wave tank tests for a BBDB model with linear damper PTO simulator in regular waves and measured motions of BBDB and air pressure in air chamber etc. Forestier et al. \footfullcite{inproceedings} reported the results of wave tank tests and field tests for the power output of BBDB named “OEBuoy” by OceanEnergy Limited.
 \end{frame}
 
-% \begin*{frame}{文献引用}{Reference Citations}
-%     \printbibliography[heading=bibintoc]
-% \end*{frame}
+\begin{frame}{文献引用}{Reference Citations}
+    \printbibliography[heading=bibintoc]
+    \insertframetitle
+\end{frame}
 
 \end{document}
